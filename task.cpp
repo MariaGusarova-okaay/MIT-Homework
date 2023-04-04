@@ -1,16 +1,19 @@
 #include<iostream>
 using namespace std;
 
-int fib(int n){
-	if (n == 1) return 0;
-	if (n == 2) return 1;
-	return fib(n - 2) + fib(n - 1);
-}
-
 
 int main(){
 	cout << "Hello, World!" << endl;
 
 	int n; cout << "n = "; cin >> n;
-	cout << fib(n);
+	
+	int fib1 = 0, fib2 = 1, copy;
+	cout << fib1 << " " << fib2 << " ";
+	
+	for (int i = 2; i < n; i++){
+		copy = fib1;
+		fib1 = fib2;
+		fib2 += copy;
+		cout << fib2 << " ";
+	}
 }
